@@ -1,6 +1,6 @@
 # import packages
 import os
-from opfunu.cec_based.cec2022 import *
+from enoppy.paper_based.pdo_2022 import *
 import numpy as np
 from copy import deepcopy
 
@@ -131,29 +131,25 @@ def RunLSHACSO(func):
             LSHACSO(func)
             BestList.append(min(FitPop))
         All_Trial.append(BestList)
-
-    np.savetxt("./LSHACSO_Data/CEC2022/F" + str(FuncNum) + "_" + str(Dim) + "D.csv", All_Trial, delimiter=",")
-
+    np.savetxt("./LSHACSO_Data/Engineer/" + str(FuncNum) + ".csv", All_Trial, delimiter=",")
 
 
-def main(dim):
+def main():
     global FuncNum, DimSize, MaxFEs, Pop, LB, UB
-    DimSize = dim
-    Pop = np.zeros((PopSize, dim))
-    MaxFEs = dim * 1000
-    LB = [-100] * dim
-    UB = [100] * dim
 
-    CEC2022 = [F12022(Dim), F22022(Dim), F32022(Dim), F42022(Dim), F52022(Dim), F62022(Dim),
-               F72022(Dim), F82022(Dim), F92022(Dim), F102022(Dim), F112022(Dim), F122022(Dim)]
-    for i in range(len(CEC2022)):
-        FuncNum = i + 1
-        RunLSHACSO(CEC2022[i].evaluate)
+    Probs = [WBP(), SRD(), TBTD(), GTD(), CBD(), TCD(), PLD(), CBHD()]
+    Names = ["WBD", "SRD", "TBTD", "GTD", "CBD", "TCD", "PLD", "CBHD"]
+    for i in range(len(Probs)):
+        DimSize = Probs[i].n_dims
+        Pop = np.zeros((PopSize, DimSize))
+        MaxFEs = 10000
+        LB = Probs[i].lb
+        UB = Probs[i].ub
+        FuncNum = Names[i]
+        RunLSHACSO(Probs[i].evaluate)
 
 
 if __name__ == "__main__":
-    if os.path.exists('./LSHACSO_Data/CEC2022') == False:
-        os.makedirs('./LSHACSO_Data/CEC2022')
-    Dims = [10, 20]
-    for Dim in Dims:
-        main(Dim)
+    if os.path.exists('./LSHACSO_Data/Engineer') == False:
+        os.makedirs('./LSHACSO_Data/Engineer')
+    main()

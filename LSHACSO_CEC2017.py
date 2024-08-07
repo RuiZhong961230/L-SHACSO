@@ -11,7 +11,7 @@ PopSizeMin = 4
 PopSize = PopSizeMax
 LB = [-100] * DimSize
 UB = [100] * DimSize
-TrialRuns = 30
+TrialRuns = 20
 MaxFEs = 1000 * DimSize
 
 Pop = np.zeros((PopSize, DimSize))
@@ -20,7 +20,7 @@ FitPop = np.zeros(PopSize)
 curFEs = 0
 FuncNum = 1
 HistorySize = 5
-mu_phi = np.array([0.1] * HistorySize)
+mu_phi = np.array([0.3] * HistorySize)
 
 
 def meanL(arr):
@@ -40,8 +40,8 @@ def fitness(X):
 
 
 # initialize the M randomly
-def Initialization():
-    global Pop, Velocity, FitPop, PopSize, PopSizeMax, mu_phi, HistorySize
+def Initialization(func):
+    global Pop, Velocity, FitPop, PopSize, PopSizeMax, mu_phi, HistorySize, curFEs
     PopSize = PopSizeMax
     Pop = np.zeros((PopSize, DimSize))
     FitPop = np.zeros(PopSize)
@@ -49,7 +49,8 @@ def Initialization():
     for i in range(PopSize):
         for j in range(DimSize):
             Pop[i][j] = LB[j] + (UB[j] - LB[j]) * np.random.rand()
-        FitPop[i] = fitness(Pop[i])
+        FitPop[i] = func(Pop[i])
+        curFEs += 1
     mu_phi = np.array([0.3] * HistorySize)
 
 
