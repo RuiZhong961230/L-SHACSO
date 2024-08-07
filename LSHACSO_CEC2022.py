@@ -11,7 +11,7 @@ PopSizeMin = 4
 PopSize = PopSizeMax
 LB = [-100] * DimSize
 UB = [100] * DimSize
-TrialRuns = 20
+TrialRuns = 30
 MaxFEs = 1000 * DimSize
 
 Pop = np.zeros((PopSize, DimSize))
