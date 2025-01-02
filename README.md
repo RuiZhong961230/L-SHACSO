@@ -16,6 +16,6 @@ volume = {186},
 pages = {109587},  
 year = {2025},  
 issn = {0010-4825},  
-doi = {https://doi.org/10.1016/j.compbiomed.2024.109587},  
+doi = {https://doi.org/10.1016/j.compbiomed.2024.109587 },  
 author = {Rui Zhong and Zhongmin Wang and Abdelazim G. Hussien and Essam H. Houssein and Ibrahim Al-Shourbaji and Mohamed A. Elseify and Jun Yu}  
 }
