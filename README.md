@@ -9,11 +9,7 @@ Necessary packages: opfunu, enoppy, and Pytorch
 • The sensitivity experiments are conducted to demonstrate the robustness of L-SHACSO.  
 • We further integrate L-SHACSO into DenseNet and ELM to propose DenseNet-L-SHACSO-ELM for eye disease detection.  
 
-
-
-
-
-@article{Zhong:25,
+@article{Zhong:25,  
 title = {Success History Adaptive Competitive Swarm Optimizer with Linear Population Reduction: Performance benchmarking and application in eye disease detection},  
 journal = {Computers in Biology and Medicine},  
 volume = {186},  
