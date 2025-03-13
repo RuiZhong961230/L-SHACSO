@@ -27,5 +27,5 @@ author = {Rui Zhong and Zhongmin Wang and Abdelazim G. Hussien and Essam H. Hous
 CEC benchmarks and Engineering problems are provided by opfunu==1.0.0 and enoppy==0.1.1 libraries, respectively, Deep learning models are provided by the Pytorch==2.1.2 library, and the eye disease detection dataset is downloaded from https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification.
 
 ## Contact
-If you have any questions, please don't hesitate to contact zhongrui[a]iic.hokudai.ac.jp
+If you have any questions, please don't hesitate to contact zhongrui[at]iic.hokudai.ac.jp
 
