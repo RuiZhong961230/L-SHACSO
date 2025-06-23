@@ -1,5 +1,5 @@
 # L-SHACSO
-Success History Adaptive Competitive Swarm Optimizer with Linear Population Reduction: Performance Benchmarking and Application in Eye Disease Detection  
+Success History Adaptive Competitive Swarm Optimizer with Linear Population Reduction: Performance benchmarking and application in eye disease detection    
 
 ## Highlights  
 • We equip Success History Adaptation and Linear Population Reduction to CSO and develop L-SHACSO.  
